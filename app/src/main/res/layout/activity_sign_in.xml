@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signin.SignInActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sign_in" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sign_in_background"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.tomer.fadingtextview.FadingTextView
+        android:id="@+id/name_sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/description_sign"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:texts="@array/app_name_translate"
+        app:timeout="10000" />
+
+    <com.tomer.fadingtextview.FadingTextView
+        android:id="@+id/description_sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="50dp"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/auth_button"
+        app:texts="@array/app_description_translate"
+        app:timeout="10000" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/auth_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:drawableStart="@drawable/google"
+        android:drawablePadding="0dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Sign in with google"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_google"
+        app:iconTintMode="multiply"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Powered by "
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_igboapi" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

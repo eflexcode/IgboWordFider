@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="800dp"
+    android:background="@color/white"
+    tools:context=".fragments.ResultsFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="800dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="800dp"
+            android:background="@color/white">
+
+            <ImageButton
+                android:id="@+id/cancel"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_close"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#D5D5D5" />
+
+            <TextView
+                android:id="@+id/result_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="30dp"
+                android:text=""
+                android:textColor="#7B7B7C"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@id/cancel"
+                app:layout_constraintStart_toEndOf="@id/cancel"
+                app:layout_constraintTop_toTopOf="@id/cancel" />
+
+            <com.todkars.shimmer.ShimmerRecyclerView
+                android:id="@+id/result_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cancel"
+                app:shimmer_recycler_item_count="25"
+                app:shimmer_recycler_layout="@layout/response_item_shimmer" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:id="@+id/error"
+                android:src="@drawable/no_data"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/cancel" />
+
+            <TextView
+                android:id="@+id/error_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="@id/error"
+                app:layout_constraintStart_toStartOf="@id/error"
+                android:text="No result found"
+                app:layout_constraintTop_toBottomOf="@id/error"
+                android:textColor="#7B7B7C"
+                android:visibility="gone"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

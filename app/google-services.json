@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "363331273249",
+    "project_id": "choo-igbo-words",
+    "storage_bucket": "choo-igbo-words.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363331273249:android:94e4dbc9bb919901e2d960",
+        "android_client_info": {
+          "package_name": "com.eflexsoft.chooigbowords"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363331273249-hbflvd1qp35df81om9bjg2pg1mbi14m0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDOBtxjW_ka22F1oxc1boeKfjfGBjlax8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363331273249-hbflvd1qp35df81om9bjg2pg1mbi14m0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

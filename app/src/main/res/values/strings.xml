@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Igbo Word finders</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="app_description_translate">
+
+        <item>A na-asụ Igbo na ndịda Naijiria, Kogi, Benue, Equatorial Guinea, Cameroon, Haiti, Barbados, Belize, Trinidad na Tobago, o nyekwaara ndị Jamaican Patois nnukwu okwu.</item>
+        <item>Igbo is spoken in southern Nigeria, Kogi, Benue, Equatorial Guinea, Cameroon, Haiti,Barbados, Belize, Trinidad and Tobago, it also supplied a large chunk of words to the Jamaican Patois.</item>
+
+    </string-array>
+
+    <string-array name="app_name_translate">
+
+        <item>Nchọta okwu Igbo</item>
+        <item>Igbo Word Finder</item>
+
+    </string-array>
+
+</resources>

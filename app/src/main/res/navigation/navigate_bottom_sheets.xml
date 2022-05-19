@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigate_bottom_sheets"
+    app:startDestination="@id/homeFragment">
+
+    <dialog
+        android:id="@+id/accountFragment"
+        android:name="com.eflexsoft.chooigbowords.fragments.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account">
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/resultsFragment"
+        android:name="com.eflexsoft.chooigbowords.fragments.ResultsFragment"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_results" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.eflexsoft.chooigbowords.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+
+</navigation>
