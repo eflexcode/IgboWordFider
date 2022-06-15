@@ -39,4 +39,8 @@ public class HomeViewModel extends AndroidViewModel {
         return repository.historyMutableLiveData;
     }
 
+    public LiveData<Boolean> observeSuccess() {
+        return repository.isSearchSuccessfully;
+    }
+
 }

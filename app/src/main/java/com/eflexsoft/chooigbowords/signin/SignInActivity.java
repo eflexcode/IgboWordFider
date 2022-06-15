@@ -106,7 +106,6 @@ public class SignInActivity extends AppCompatActivity {
 
             }catch (Exception e){
                 Toast.makeText(this, "Connecting your google account failed", Toast.LENGTH_SHORT).show();
-
             }
 
         }

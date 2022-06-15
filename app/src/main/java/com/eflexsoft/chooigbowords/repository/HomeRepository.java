@@ -56,6 +56,7 @@ public class HomeRepository {
         api.IGBO_API_RESPONSE_CALL(map).enqueue(new Callback<List<IgboApiResponse>>() {
             @Override
             public void onResponse(@NonNull Call<List<IgboApiResponse>> call, @NonNull Response<List<IgboApiResponse>> response) {
+                Log.d(TAG, "onResponse: "+response.code());
 
                 if (response.code() == 200) {
 
@@ -74,7 +75,7 @@ public class HomeRepository {
             @Override
             public void onFailure(@NonNull Call<List<IgboApiResponse>> call, @NonNull Throwable t) {
                 isSearchSuccessfully.setValue(false);
-//                Log.d(TAG, "onResponse: "+t.getMessage());
+                Log.d(TAG, "onFailure: "+t.getMessage());
             }
         });
 

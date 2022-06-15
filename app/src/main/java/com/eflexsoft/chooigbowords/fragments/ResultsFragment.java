@@ -26,6 +26,10 @@ public class ResultsFragment extends BottomSheetDialogFragment {
     FragmentResultsBinding binding;
     String definition;
 
+//    @Override
+//    public int getTheme() {
+//        return R.style.BottomSheet;
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,8 +43,8 @@ public class ResultsFragment extends BottomSheetDialogFragment {
         viewModel.doSearch(keyword.trim());
 
         binding = FragmentResultsBinding.inflate(inflater, container, false);
-
-        binding.resultCount.setText("Getting result for " +keyword);
+//        setStyle(STYLE_NORMAL, R.style.BottomSheet);
+        binding.resultCount.setText("Getting result for " + keyword);
 
         binding.resultRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.resultRecyclerView.showShimmer();
@@ -67,6 +71,32 @@ public class ResultsFragment extends BottomSheetDialogFragment {
                     binding.errorText.setVisibility(View.VISIBLE);
                 }
 
+            }
+        });
+
+        viewModel.observeSuccess().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                if (!aBoolean) {
+                    binding.resultRecyclerView.hideShimmer();
+                    binding.timeout.setVisibility(View.VISIBLE);
+                    binding.tryAgain.setVisibility(View.VISIBLE);
+                } else {
+                    binding.resultRecyclerView.hideShimmer();
+
+                    binding.timeout.setVisibility(View.GONE);
+                    binding.tryAgain.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        binding.tryAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewModel.doSearch(keyword.trim());
+                binding.resultRecyclerView.showShimmer();
+                binding.timeout.setVisibility(View.GONE);
+                binding.tryAgain.setVisibility(View.GONE);
             }
         });
 
